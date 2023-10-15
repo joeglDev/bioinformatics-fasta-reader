@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bioinformatics-fasta-reader"
+version = "0.1.0"
+description = ""
+authors = ["joegldev"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = "^23.9.1"
+biopython = "^1.81"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
