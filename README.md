@@ -11,3 +11,4 @@ Dependencies are managed using poetry. Please see `pyproject.toml` for a full li
 - Testing
 - Manipulation of DNA complement strands
 - Return all stop protein strings not just the first
+- Write findings to file

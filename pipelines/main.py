@@ -1,14 +1,22 @@
+from datetime import datetime
+
 from pipelines.classes.fasta_sequence import FastaSequence
+from pipelines.components.file_io import create_new_file
 from pipelines.components.read_fasta import read_fasta
 from pipelines.components.transcribe_mrna import transcribe_dna_to_mrna
 from pipelines.components.translate_protein import translate_mrna_to_protein
 
 
 def main():
+    # dna manipulation
     file_path = "../data/ATP5MC3_ENSG00000154518.fasta"
     dna_seq = read_data(file_path)
     get_mrna(dna_seq)
     get_protein(dna_seq)
+
+    # write to file
+    file_name = f"{datetime.now()}_output_{dna_seq.Id}"
+    create_new_file(file_name, dna_seq)
 
 
 def read_data(file_path: str) -> FastaSequence:
