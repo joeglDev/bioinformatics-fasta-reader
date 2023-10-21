@@ -12,6 +12,7 @@ def read_data(file_path: str) -> FastaSequence:
     print(f"FASTA Metadata: {seq.Id}")
     print(f"DNA Sequence: {seq.Seq}")
     print(f"DNA Sequence length: {seq.Length}")
+    print(f"DNA GC content: {seq.Gc_content}")
 
     return seq
 
