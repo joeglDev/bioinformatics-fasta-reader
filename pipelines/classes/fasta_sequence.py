@@ -8,4 +8,6 @@ class FastaSequence:
         self.Length = length
         self.Gc_content = gc_content
         self.Mrna_seq = None
+        self.Protein_seq = None
+        self.Protein_seq_to_stop = None
 

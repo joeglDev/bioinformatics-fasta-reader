@@ -1,14 +1,14 @@
 from pipelines.classes.fasta_sequence import FastaSequence
 from pipelines.components.read_fasta import read_fasta
 from pipelines.components.transcribe_mrna import transcribe_dna_to_mrna
+from pipelines.components.translate_protein import translate_mrna_to_protein
 
 
 def main():
     file_path = "../data/ATP5MC3_ENSG00000154518.fasta"
     dna_seq = read_data(file_path)
-    print(dna_seq.Mrna_seq)
     get_mrna(dna_seq)
-    print(dna_seq.Mrna_seq)
+    get_protein(dna_seq)
 
 
 def read_data(file_path: str) -> FastaSequence:
@@ -24,6 +24,12 @@ def read_data(file_path: str) -> FastaSequence:
 def get_mrna(dna_seq: FastaSequence):
     transcribe_dna_to_mrna(dna_seq)
     print(f"MRNA sequence: {dna_seq.Mrna_seq}")
+
+
+def get_protein(dna_seq):
+    translate_mrna_to_protein(dna_seq)
+    print(f"Protein sequence: {dna_seq.Protein_seq}")
+    print(f"Protein sequence to stop: {dna_seq.Protein_seq_to_stop}")
 
 
 main()
