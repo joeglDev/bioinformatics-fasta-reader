@@ -7,4 +7,5 @@ class FastaSequence:
         self.Seq = seq
         self.Length = length
         self.Gc_content = gc_content
+        self.Mrna_seq = None
 
